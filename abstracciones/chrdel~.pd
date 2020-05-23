@@ -1,0 +1,76 @@
+#N canvas 2 52 1364 691 10;
+#X obj 215 478 *~;
+#X obj 218 139 vsl 15 64 0.01 1 1 0 empty empty fb 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 224 421 pack f 80;
+#X obj 226 448 line~;
+#X obj 340 468 *~;
+#X obj 246 138 vsl 15 64 0 1 0 0 empty empty vol 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 355 418 pack f 80;
+#X obj 357 445 line~;
+#X obj 295 353 expr~ $v1 * $v2 + $v3;
+#X obj 407 273 pack f f;
+#X obj 408 295 line~;
+#X floatatom 181 172 5 0 0 0 - - -, f 5;
+#X obj 268 280 osc~;
+#X obj 267 305 expr~ $v1 * 0.5 + 0.5;
+#X obj 339 258 pack f f;
+#X obj 340 280 line~;
+#X obj 190 222 * 0.01;
+#X obj 187 247 pack f f;
+#X obj 188 269 line~;
+#X floatatom 108 149 5 0 0 2 rate - -, f 5;
+#X obj 187 126 vsl 16 40 80 8000 1 0 empty empty time 0 -9 0 10 -262144
+-1 -1 437 1;
+#X obj 280 133 expr pow(10 \, -$f1);
+#X obj 269 162 t b f;
+#X obj 230 140 vsl 8 14 0.8 1 0 0 empty empty empty 0 -9 0 10 -258049
+-1 -1 0 1;
+#X obj 303 379 vd~ \$1-chrdel;
+#X obj 35 415 inlet~;
+#X obj 337 501 outlet~;
+#X obj 108 134 hradio 11 0 0 4 empty empty rate\ *\ 10^-x -4 -5 0 8
+-262144 -1 -108187 0;
+#X obj 113 175 hsl 60 15 0.1 3000 1 0 empty empty depth 10 5 0 10 -262144
+-1 -1 0 1;
+#X obj 35 440 delwrite~ \$1-chrdel 8000;
+#X text 569 82 el argumento es para darle un nombre. No lo repita en
+otro objeto;
+#X text 616 400 falta seleccionador de onda;
+#X floatatom 139 192 5 0 0 0 blur - -, f 5;
+#X obj 115 239 inlet;
+#X connect 0 0 29 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 1;
+#X connect 4 0 26 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 1;
+#X connect 8 0 24 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 2;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 13 0 8 0;
+#X connect 14 0 15 0;
+#X connect 15 0 8 1;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 12 0;
+#X connect 19 0 16 0;
+#X connect 20 0 11 0;
+#X connect 21 0 22 0;
+#X connect 22 0 19 0;
+#X connect 22 1 16 1;
+#X connect 23 0 1 0;
+#X connect 24 0 0 0;
+#X connect 24 0 4 0;
+#X connect 25 0 29 0;
+#X connect 27 0 21 0;
+#X connect 28 0 14 0;
+#X connect 32 0 9 1;
+#X connect 32 0 14 1;
+#X connect 33 0 17 0;
+#X coords 0 -1 1 1 172 112 1 100 100;
